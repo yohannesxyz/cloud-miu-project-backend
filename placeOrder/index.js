@@ -5,7 +5,7 @@ const client = new DynamoDBClient({ region: "us-east-1" });
 
 exports.handler = async (event) => {
   try {
-    // Optional: handle OPTIONS preflight (CORS)
+    
     if (event.httpMethod === "OPTIONS") {
       return {
         statusCode: 200,
