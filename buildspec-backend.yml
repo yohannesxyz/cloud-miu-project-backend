@@ -15,11 +15,11 @@ phases:
   post_build:
     commands:
       # ✅ Upload to S3
-      - aws s3 cp getProducts.zip s3://ecommerce-lambda-deploymentss/lambda/
-      - aws s3 cp addToCart.zip s3://ecommerce-lambda-deploymentss/lambda/
-      - aws s3 cp placeOrder.zip s3://ecommerce-lambda-deploymentss/lambda/
+      - aws s3 cp getProducts.zip s3://lambda-backend-deploymentss/lambda/
+      - aws s3 cp addToCart.zip s3://lambda-backend-deploymentss/lambda/
+      - aws s3 cp placeOrder.zip s3://lambda-backend-deploymentss/lambda/
 
       # ✅ Update the Lambda functions to use latest ZIPs
-      - aws lambda update-function-code --function-name getProducts --s3-bucket ecommerce-lambda-deploymentss --s3-key lambda/getProducts.zip
-      - aws lambda update-function-code --function-name addToCart --s3-bucket ecommerce-lambda-deploymentss --s3-key lambda/addToCart.zip
-      - aws lambda update-function-code --function-name placeOrder --s3-bucket ecommerce-lambda-deploymentss --s3-key lambda/placeOrder.zip
+      - aws lambda update-function-code --function-name getProducts --s3-bucket lambda-backend-deploymentss --s3-key lambda/getProducts.zip
+      - aws lambda update-function-code --function-name addToCart --s3-bucket lambda-backend-deploymentss --s3-key lambda/addToCart.zip
+      - aws lambda update-function-code --function-name placeOrder --s3-bucket lambda-backend-deploymentss --s3-key lambda/placeOrder.zip
